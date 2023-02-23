@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Make Payment</title>
+    <style type="text/css">
+      .payform1{
+    min-width: 600px;
+    background-color: #fff;
+    width: 600px;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    height: 100%;
+  }
+   .payform{
+    width: 100%;
+    height: 100%;
+    margin-left: none;
+    margin-right: 500px;
+  
+  }
+  
+  .wrapper h2{
+    background-color: #fcfcfc;
+    color: #7ed321;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px dotted #333;
+  }
+  h4{
+    padding-bottom: 5px;
+    color: #7ed321;
+  }
+  .input-group{
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+  }
+  .input-box{
+    width: 100%;
+    margin-right: 12px;
+    position: relative;
+  }
+  .input-box:last-child{
+    margin-right: 0;
+  }
+  .name{
+    padding: 14px 10px 14px 50px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+  }
+  .name:focus, .dob:focus{
+    -webkit-box-shadow:0 0 2px 1px #7ed32180;
+    -moz-box-shadow:0 0 2px 1px #7ed32180;
+    box-shadow: 0 0 2px 1px #7ed32180;
+    border: 1px solid #7ed321;
+  }
+  .input-box .icon{
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    height:52px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 2px 0 0 2px;
+    transition: 0.3s;
+    font-size: 20px;
+    pointer-events: none;
+    border: 1px solid #00000033;
+    border-right: none;
+  }
+  .name:focus + .icon{
+    background-color: #7ed321;
+    color: #fff;
+    border-right: 1px solid #7ed321;
+    border: none;
+    transition: 1s;
+  }
+  .dob{
+    width: 30%;
+    padding: 14px;
+    text-align: center;
+    background-color: #fcfcfc;
+    transition: 0.3s;
+    outline: none;
+    border: 1px solid #c0bfbf;
+    border-radius: 3px;
+  }
+  .radio{
+    display: none;
+  }
+  .input-box label{
+    width: 50%;
+    padding: 13px;
+    background-color: #fcfcfc;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #c0bfbf;
+  }
+  .input-box label:first-of-type{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right: none;
+  }
+  .input-box label:last-of-type{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .radio:checked + label{
+    background-color: #7ed321;
+    color: #fff;
+    transition: 0.5s;
+  }
+  .input-box select{
+    display: inline-block;
+    width: 50%;
+    padding: 12px;
+    background-color: #fcfcfc;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #c0bfbf;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .input-box select:focus{
+    background-color: #7ed321;
+    color: #fff;
+    text-align: center;
+  }
+  button{
+    width: 100%;
+    background: transparent;
+    border: none;
+    background: #7ed321;
+    color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.35s ease;
+  }
+  button:hover{
+    cursor: pointer;
+    background: #5eb105;
+  }
+  
+  /*form style*/
+  
+  .ppcon{
+    min-width:600px;
+    background:white;
+    height: 100px;
+    width:100px;
+    margin-left:100px;
+    margin-top:10px;
+  }
+  
+  .frmcont{
+      background: white;
+      position:relative;
+      width:70%;
+      border-radius: 6px;
+      padding:30px;
+      margin:0 15px;
+      box-shadow: 0 5px 10px black;
+      max-width:900px;
+      margin-left:30%;
+  
+  }
+  .formcon{
+      font-size: 20px;
+      font-weight: 600;
+      color:#333;
+      -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+      
+  }
+  form .frmcont .formcon{
+      display: flex;
+      width:calc(100% / 3 - 15px);
+      flex-direction: column;
+  }
+  .formcon input{
+      height:42px;
+      margin:8px;
+      padding:0 15px;
+      border-radius: 5px;
+  }
+  .formcon label{
+      font-size:12px;
+      font-weight: 500;
+      color:#2e2e2e;
+  }
+  .error{
+      border:2px solid red;
+  }
+  .success{
+   border:2px solid green;
+  }
+  #pwd-strength{
+    height:5px;
+    width:100px;
+    display:block;
+    background-color: #ccc;  
+  }
+  #pwd-strength span{
+      display:block;
+      height:5px;
+      border-radius:2px;
+      transition:all 500ms ease;
+  }
+  .strength-0 span{
+      background-color: red;
+      width:5%;
+  }
+  .strength-1 span{
+      background-color: orangered;
+      width:25%;
+  }
+  .strength-2 span{
+      background-color: orange;
+      width:50%;
+  }
+  .strength-3 span{
+      background-color: yellowgreen;
+      width:75%;
+  }
+  .strength-4 span{
+      background-color: green;
+      width:100%;
+  }
+    </style>
+  </head>
+
+<body>
+  <div class="navdiv">
+    <img src="./images/Bee's Solid Waste Service.png" style="width: 100px; border-radius:50%;" alt="">
+    <nav>
+      <ul>
+       <li><a href="">Home</a></li>
+       <li><a href="contact.html">Contact</a></li>
+       <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a>
+          <ul class="drplist">
+          <li><a href="">Man Service</a></li>
+         <li><a href="">Tricycle Service</a></li> 
+         <li><a hreef="">Truck Service</a></li> 
+         <li> <a href="">Forniture Service</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="payform1">
+        <h2 style="text-align:center;">Please Enter Your Payment Details</h2>
+        <form class="payform" method="POST">
+          <h4>Account</h4>
+          <div class="input-group">
+            <div class="input-box">
+              <input type="text" placeholder="FirstName" required class="name">
+              <i class="fa fa-user icon"></i>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="OtherName" required class="name">
+              <i class="fa fa-user icon"></i>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <input type="email" placeholder="Email Adress" required class="name">
+              <i class="fa fa-envelope icon"></i>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <h4> Date of Birth</h4>
+              <input type="text" placeholder="DD" class="dob">
+              <input type="text" placeholder="MM" class="dob">
+              <input type="text" placeholder="YYYY" class="dob">
+            </div>
+            <div class="input-box">
+              <h4> Gender</h4>
+              <input type="radio" id="b1" name="gendar" checked class="radio">
+              <label for="b1">Male</label>
+              <input type="radio" id="b2" name="gendar" class="radio">
+              <label for="b2">Female</label>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <h4>Payment Details</h4>
+              <input type="radio" name="pay" id="bc1" checked class="radio">
+              <label for="bc1"><span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
+              <input type="radio" name="pay" id="bc2" class="radio">
+              <label for="bc2"><span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <input type="tel" placeholder="Card Number" required class="name">
+              <i class="fa fa-credit-card icon"></i>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <input type="tel" placeholder="Card CVC" required class="name">
+              <i class="fa fa-user icon"></i>
+            </div>
+            <div class="input-box">
+              <select>
+                <option>01 jun</option>
+                <option>02 jun</option>
+                <option>03 jun</option>
+              </select>
+              <select>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-box">
+              <button type="submit">PAY NOW</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <footer>
+        <div class="footercon">
+         <h1>Bee's Solid Waste Service</h1>
+         <div class="footcon">
+          <a href="service.html">our Services</a>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+        <hr>
+        </div>
+        <div class="footericon">
+        <a href="https://www.facebook.com/benjina.oconnor.7"><i class="fa fa-facebook-official"></i></a>
+       <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram"></i></a>
+        <a href=" https://wa.me/+23276546865"><i class="fa fa-whatsapp"></i></a>
+      </div>
+      </footer>
+    
+    <script>
+      setInterval(myFunction, 1000);
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds() + ":" + 
+  d.getDate() + "/" + 
+  d.getMonth() + "/" +
+  d.getFullYear();
+}
+let heightt = screen.height;
+  let widthh = screen.width;
+  widthh = widthh / 2;
+  widthh = widthh - 20;
+  heightt = heightt - 110;
+  document.getElementById("action_target").style.height = heightt + "px";
+  document.getElementById("learn").style.right = widthh + "px";
+    </script>
+    <script src="waste.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+</html>

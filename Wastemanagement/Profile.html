@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+   <style>
+     .profilnav{
+    min-width:600px;
+      width:100%;
+      height:100px;
+      background: #1798fb;
+      display:flex;
+      font-size:20px;
+      padding:20px;
+      font-style: oblique;
+      box-shadow:0 5px 10px black; 
+  }
+  
+  .wrapper{
+    position:relative;
+    width:400px;
+    margin:50px auto 0;
+  }
+  .profile_card{
+    width:600px;
+    height:700px;
+    background: #8178d1;
+    padding:50px 25px;
+    position:relative;
+    z-index: 1;
+    color:#fff;
+    text-align: center;
+    box-shadow:0 5px 10px black; 
+  
+  }
+  
+  .profile_img img{
+    width:80px;
+    border-radius: 50%;
+    display:block;
+    margin:0 auto;
+  }
+  
+  .profile_img .name{
+    font-size:20px;
+    font-weight:500;
+    margin: 15px 0 5px;
+  }
+  
+  
+  .profile_img .place{
+    font-size:20px;
+    font-weight:300;
+    
+  }
+  .profile_img .place .icon{
+    margin-right:10px;
+  }
+  .profile_icons{
+    display: flex;
+    justify-content: center;
+    margin:30px 0;
+    
+  
+  }
+  .profile_icons .profile_item{
+    margin-right:15px;
+  
+  }
+  
+  .profile_icons .profile_item:last-child{
+    margin-right: 0;
+  }
+  .profile_icons .icon,
+  .profile_icons .num{
+    font-size: 24px;
+  }
+  .profile_icons .title{
+    font-size: 12px;
+    text-transform: uppercase;
+    margin:10px 0;
+  }
+  .profile_btn{
+    background: #ebc654;
+    padding:10px;
+    border-radius:25px;
+    width:200px;
+    margin:0 auto;
+    color:#8d731e;
+    cursor:pointer;
+  }
+  .profile_btn:hover{
+    background:#ffc208;
+  }
+  .back_btn,
+  .setting_btn{
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    top:0;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back_btn{
+    left:0;
+    box-shadow: inset -2px -2px -3px #6a60c3;
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  .setting_btn{
+    right:0;
+    box-shadow: inset 2px -2px -3px #6a60c3;
+    margin-top: 50px;
+    margin-right: 20px;
+  }
+  .back_btn:hover,
+  .setting_btn:hover{
+    background: #6a60c3;
+  }
+  
+  .profile_item{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap:3px;
+    padding:3px;
+  }
+
+   </style>
+
+  </head>
+<body>
+  <div class="navdiv">
+    <img src="./images/Bee's Solid Waste Service.png" style="width: 100px; border-radius:50%;" alt="">
+    <nav>
+      <ul>
+       <li><a href="">Home</a></li>
+       <li><a href="contact.html">Contact</a></li>
+       <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a>
+          <ul class="drplist">
+          <li><a href="">Man Service</a></li>
+         <li><a href="">Tricycle Service</a></li> 
+         <li><a hreef="">Truck Service</a></li> 
+         <li> <a href="">Forniture Service</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="wrapper">
+     <div class="profile_card">
+        <div class="back_btn">
+            <i class="fa fa-long-arrow-left"></i>
+        </div>
+        <div class="setting_btn">
+            <i class="fa fa-cog"></i>
+        </div>
+
+        <div class="profile_wrap">
+            <div class="profile_img">
+               <img src="./images/Beatrice.jpg" alt="Profile_img"> 
+               <p class="name">Beatrice O'Connor</p>
+               <p class="place">
+                <span class="icon">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </span>
+                <span class="place_name" style="color: green;">7 Samuel Lane Wilberforce Freetown</span>
+               </p>
+            </div>
+        </div>
+
+        <div class="profile_icons" style="display:flex ;">
+        <div class="profile_item">
+            <div class="icon">
+             <i class="fa fa-user"></i>
+            </div>
+            <div class="title">
+              Referals
+            </div>
+            <div class="num">
+             162
+            </div>
+             
+            <div class="icon">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </div>
+            <div class="title">
+                Points Earned
+              </div>
+              <div class="num">
+               $19.0
+              </div>
+
+              <div class="icon">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </div>
+              <div class="title">
+                joined year
+              </div>
+              <div class="num">
+               2022
+              </div>
+        </div>
+        </div>
+
+        <div class="profile_btn">
+            Start Earning Points
+        </div>
+     
+     <div class="profil_slider">
+     <ol>
+        <li>
+            <div class="slider_item">
+                <div class="slider_left">
+                 <div class="img">
+                    <img src="./images/geology.jpg" alt="" style="width:100px;">
+                 </div>
+                 <div class="item_name">
+                    Olamide John
+                 </div>
+                </div>
+                <div class="slider_right">
+                    <div class="btn btn_following">
+                        Team Member
+                    </div>
+                  <div class="item_email">
+                    @OlamideJohn
+                  </div>
+                </div>
+            </div>
+
+            <div class="slider_left">
+                <div class="img">
+                   <img src="./images/elephant.jpg" alt="" style="width:70px">
+                </div>
+                <div class="item_name">
+                   Elephant Crisis
+                </div>
+               <div class="slider_right">
+                   <div class="btn btn_following">
+                    Team Member
+                   </div>
+                 <div class="item_email">
+                   @ElephantCrisis
+                 </div>
+               </div>
+            </div>
+           </div>
+        </li>
+     </ol>
+    </div>
+    </div>
+
+
+
+
+     
+    <footer>
+      <div class="footercon">
+       <h1>Bee's Solid Waste Service</h1>
+       <div class="footcon">
+        <a href="service.html">our Services</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+      </div>
+      <hr>
+      </div>
+      <div class="footericon">
+      <a href="https://www.facebook.com/benjina.oconnor.7"><i class="fa fa-facebook-official"></i></a>
+     <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram"></i></a>
+      <a href=" https://wa.me/+23276546865"><i class="fa fa-whatsapp"></i></a>
+    </div>
+    </footer>
+     
+<script>
+    setInterval(myFunction, 1000);
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds() + ":" + 
+  d.getDate() + "/" + 
+  d.getMonth() + "/" +
+  d.getFullYear();
+}
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+    <script src="waste.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+  
+</body>
+</html>

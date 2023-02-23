@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash-Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+   <style>
+  .dashnav{
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    width: 90px;
+    /* width: 280px; */
+    background: #fff;
+    overflow: hidden;
+    transition: 1s;
+  }
+  .dashnav:hover{
+    width: 280px;
+    transition: 1s;
+  }
+  .logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+    padding-bottom: 3rem;
+  }
+  
+  .logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+  .logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  a{
+    position: relative;
+    width: 280px;
+    font-size: 14px;
+    color: rgb(85, 83, 83);
+    display: table;
+    padding: 10px;
+    text-decoration:none;
+  }
+  .dashnav .fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 20px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .dashnav i{
+    text-decoration: none;
+    color: #000;
+  }
+  .nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    color:#000;
+    text-decoration:none;
+  }
+  .dashnav a:hover{
+    background: #eee;
+  }
+  .dashnav a:hover i{
+    color: #34AF6D;
+    transition: 0.5s;
+  }
+  .logout{
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .container_dash{
+    display: flex;
+    
+  }
+  
+  /* MAin Section */
+  .main{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+  }
+  .main-top{
+    display: flex;
+    width: 100%;
+  }
+  .main-top i{
+    position: absolute;
+    right: 0;
+    margin: 10px 30px;
+    color: rgb(110, 109, 109);
+    cursor: pointer;
+  }
+  .main .users{
+    display: flex;
+    width: 100%;
+  }
+  .users .card{
+    width: 25%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  .users .card img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .users .card h4{
+    text-transform: uppercase;
+  }
+  .users .card p{
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  .users table{
+    margin:  auto;
+  }
+  .users .per span{
+    padding: 5px;
+    border-radius: 10px;
+    background: rgb(223, 223, 223);
+  }
+  .users td{
+    font-size: 14px;
+    padding-right: 15px;
+  }
+  .users .card button{
+    width: 100%;
+    margin-top: 8px;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #4AD489;
+  }
+  .users .card button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5s;
+  }
+  
+  /*Attendance List serction  */
+  .attendance{
+    margin-top: 20px;
+    text-transform: capitalize;
+  }
+  .attendance-list{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  .table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+  }
+  table thead tr{
+    color: #fff;
+    background: #34AF6D;
+    text-align: left;
+    font-weight: bold;
+  }
+  .table th,
+  .table td{
+    padding: 12px 15px;
+  }
+  .table tbody tr{
+    border-bottom: 1px solid #ddd;
+  }
+  .table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+  }
+  .table tbody tr.active{
+    font-weight: bold;
+    color: #4AD489;
+  }
+  .table tbody tr:last-of-type{
+    border-bottom: 2px solid #4AD489;
+  }
+  .table button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+  }
+  .table button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
+  }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container_dash">
+        <nav class="dashnav" id="mymnav">
+          <ol>
+            <li><a href="#" class="logo">
+              <img src="./images/Bee's Solid Waste Service.png">
+              <span class="nav-item">Admin</span>
+            </a></li>
+            <li><a href="Homepage.html">
+              <i class="fa fa-home"></i>
+              <span class="nav-item">Home</span>
+            </a></li>
+            <li><a href="contact.html">
+              <i class="fa fa-comment"></i>
+              <span class="nav-item">Contact</span>
+            </a></li>
+            <li><a href="#">
+              <i class="fa fa-database"></i>
+              <span class="nav-item">Report</span>
+            </a></li>
+            <li><a href="service.html">
+            <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="nav-item">Service</span>
+            </a></li>
+            <li><a href="Profile.html">
+              <i class="fa fa-cog"></i>
+              <span class="nav-item">Setting</span>
+            </a></li>
+    
+            <li><a href="#" class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="nav-item">Log out</span>
+            </a></li>
+          </ol>
+        </nav>
+    
+    
+        <section class="main">
+          <div class="main-top">
+            <h1 style="text-align:center">Management</h1>
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="users">
+            
+            <div class="card">
+              <img src="./images/avata.png">
+              <h4>Beatrice O'Connor</h4>
+              <p>Ui designer</p>
+              <p>Programmer</p>
+              <p>C.E.O</p>
+              <div class="per">
+                <table>
+                  <tr>
+                    <td><span>85%</span></td>
+                    <td><span>87%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Month</td>
+                    <td>Year</td>
+                  </tr>
+                </table>
+              </div>
+              <button  style="color:green ;">Profile</button>
+            </div>
+            
+            <div class="card">
+              <img src="./images/avata.png">
+              <h4>Olamide Edith John</h4>
+              <p>Manager</p>
+              <div class="per">
+                <table>
+                  <tr>
+                    <td><span>82%</span></td>
+                    <td><span>85%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Month</td>
+                    <td>Year</td>
+                  </tr>
+                </table>
+              </div>
+              <button  style="color:green ;"> Profile</button>
+            </div>
+           
+            <div class="card">
+              <img src="./images/avata.png">
+              <h4>Badan John</h4>
+              <p>Secretary</p>
+              <div class="per">
+                <table>
+                  <tr>
+                    <td><span>94%</span></td>
+                    <td><span>92%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Month</td>
+                    <td>Year</td>
+                  </tr>
+                </table>
+              </div>
+              <button style="color:green ;">Profile</button>
+            </div>
+            
+            <div class="card">
+              <img src="./images/avata.png">
+              <h4>Salina micheal</h4>
+              <p>Assistant</p>
+              <div class="per">
+                <table>
+                  <tr>
+                    <td><span>85%</span></td>
+                    <td><span>82%</span></td>
+                  </tr>
+                  <tr>
+                    <td>Month</td>
+                    <td>Year</td>
+                  </tr>
+                </table>
+              </div>
+              <button  style="color:green ;">Profile</button>
+            </div>
+          
+          </div>
+    
+          <section class="attendance">
+            <div class="attendance-list">
+              <h1>Registered Customers</h1>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Join Time</th>
+                    <th>Logout Time</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>01</td>
+                    <td>Sam David</td>
+                    <td>Man</td>
+                    <td>03-24-22</td>
+                    <td>8:00AM</td>
+                    <td>3:00PM</td>
+                    <td><button  style="color:green ;">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>02</td>
+                    <td>Balbina Kherr</td>
+                    <td>Tricycle</td>
+                    <td>03-24-22</td>
+                    <td>9:00AM</td>
+                    <td>4:00PM</td>
+                    <td><button style="color:green">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>03</td>
+                    <td>Badan John</td>
+                    <td>Truck</td>
+                    <td>03-24-22</td>
+                    <td>8:00AM</td>
+                    <td>3:00PM</td>
+                    <td><button  style="color:green ;">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>04</td>
+                    <td>Sara David</td>
+                    <td>Man</td>
+                    <td>03-24-22</td>
+                    <td>8:00AM</td>
+                    <td>3:00PM</td>
+                    <td><button  style="color:green ;">View</button></td>
+                  </tr>
+                  
+                    <td>05</td>
+                    <td>Salina</td>
+                    <td>Man</td>
+                    <td>03-24-22</td>
+                    <td>9:00AM</td>
+                    <td>4:00PM</td>
+                    <td><button  style="color:green ;">View</button></td>
+                  </tr>
+                  <tr >
+                    <td>06</td>
+                    <td>Tara Smith</td>
+                    <td>Tricycle</td>
+                    <td>03-24-22</td>
+                    <td>9:00AM</td>
+                    <td>4:00PM</td>
+                    <td><button  style="color:green ;">View</button></td>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        
+        </section>
+      
+      </div>
+    
+
+      <footer>
+        <div class="footercon">
+         <h1>Bee's Solid Waste Service</h1>
+         <div class="footcon">
+          <a href="service.html">our Services</a>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact us</a>
+        </div>
+        <hr>
+        </div>
+        <div class="footericon">
+        <a href="https://www.facebook.com/benjina.oconnor.7"><i class="fa fa-facebook-official"></i></a>
+       <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram"></i></a>
+        <a href=" https://wa.me/+23276546865"><i class="fa fa-whatsapp"></i></a>
+      </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</body>
+</html>
